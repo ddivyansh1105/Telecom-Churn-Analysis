@@ -1,0 +1,119 @@
+Records analysed: 7,043
+Churned customers: 1,869
+Blank TotalCharges fixed: 11
+Overall churn rate: 26.5%
+
+Churn rate (%) by Contract:
+Contract
+Month-to-month    42.7
+One year          11.3
+Two year           2.8
+
+Churn rate (%) by TenureBand:
+TenureBand
+0-6 mo      52.9
+13-24 mo    28.7
+25-48 mo    20.4
+49-72 mo     9.5
+7-12 mo     35.9
+
+Churn rate (%) by InternetService:
+InternetService
+DSL            19.0
+Fiber optic    41.9
+No              7.4
+
+Churn rate (%) by PaymentMethod:
+PaymentMethod
+Bank transfer (automatic)    16.7
+Credit card (automatic)      15.2
+Electronic check             45.3
+Mailed check                 19.1
+
+Churn rate (%) by TechSupport:
+TechSupport
+No     31.2
+Yes    15.2
+
+Churn rate (%) by OnlineSecurity:
+OnlineSecurity
+No     31.3
+Yes    14.6
+
+Churn rate (%) by SeniorCitizen:
+SeniorCitizen
+No     23.6
+Yes    41.7
+
+Churn rate (%) by PaperlessBilling:
+PaperlessBilling
+No     16.3
+Yes    33.6
+
+Churn rate (%) by ProtectionServices:
+ProtectionServices
+0    29.8
+1    38.9
+2    23.8
+3    12.4
+4     5.3
+
+Monthly revenue of churned customers: 139,131 (30.5% of total)
+
+Averages by churn:
+         CLTV  MonthlyCharges  tenure
+Churn                                
+No     4490.9            61.3    37.6
+Yes    4149.4            74.4    18.0
+
+Top churn reasons (% of churners):
+ChurnReason
+Attitude of support person                   10.3
+Competitor offered higher download speeds    10.1
+Competitor offered more data                  8.7
+Don't know                                    8.2
+Competitor made better offer                  7.5
+Attitude of service provider                  7.2
+Competitor had better devices                 7.0
+Network reliability                           5.5
+Product dissatisfaction                       5.5
+Price too high                                5.2
+Competitor-related total: 33.3% | Staff-attitude total: 17.5%
+
+Cities with >=50 customers, highest churn:
+                 n  rate
+City                    
+San Diego      150  33.3
+San Francisco  104  29.8
+Los Angeles    305  29.5
+San Jose       112  25.9
+Oakland         52  25.0
+Long Beach      60  25.0
+Fresno          64  25.0
+Sacramento     108  24.1
+
+High-risk segment: 833 customers, churn 71.1%, 31.7% of all churners, 34.9% of lost monthly revenue
+
+--- Logistic regression (balanced) ---
+ROC-AUC: 0.852
+              precision    recall  f1-score   support
+
+           0      0.909     0.743     0.818      1294
+           1      0.527     0.794     0.634       467
+
+    accuracy                          0.756      1761
+   macro avg      0.718     0.769     0.726      1761
+weighted avg      0.808     0.756     0.769      1761
+
+Raise risk:
+InternetService_Fiber optic       0.951
+StreamingMovies_Yes               0.399
+PaperlessBilling_Yes              0.356
+PaymentMethod_Electronic check    0.349
+StreamingTV_Yes                   0.313
+Lower risk:
+Dependents_Yes       -1.598
+Contract_Two year    -1.345
+InternetService_No   -0.971
+Contract_One year    -0.805
+tenure               -0.735
